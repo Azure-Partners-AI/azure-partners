@@ -11,11 +11,11 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <Programs />
+      {/*<Programs />
       <Features />
       <Testimonials />
       <CallToAction />
-      <Footer />
+      <Footer />*/}
     </main>
   );
 }
