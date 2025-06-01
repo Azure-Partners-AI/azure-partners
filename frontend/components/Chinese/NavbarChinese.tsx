@@ -5,9 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import LanguageToggle from "./LanguageToggle";
 
-export default function Navbar() {
+export default function NavbarChinese() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -51,14 +50,13 @@ export default function Navbar() {
                 scrolled ? "text-primary" : "text-white"
               )}
             >
-              Azure Partners
+              Azure Partners (中文)
             </span>
-
             <Link
-              href="/zh"
+              href="/en"
               className="bg-dark text-white px-4 py-2 rounded-md transition-colors ml-3"
             >
-              中文
+              English
             </Link>
           </Link>
 
@@ -66,16 +64,16 @@ export default function Navbar() {
             <NavItem title="Programs" scrolled={scrolled}>
               <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2">
                 <NavDropdownItem href="/programs/finance">
-                  AI in Finance
+                  AI in Finance (中文)
                 </NavDropdownItem>
                 <NavDropdownItem href="/programs/venture-capital">
-                  VC Fundraising
+                  VC Fundraising (中文)
                 </NavDropdownItem>
                 <NavDropdownItem href="/programs/coding">
-                  AI Coding
+                  AI Coding (中文)
                 </NavDropdownItem>
                 <NavDropdownItem href="/programs/enterprise">
-                  Enterprise Solutions
+                  Enterprise Solutions (中文)
                 </NavDropdownItem>
               </div>
             </NavItem>
@@ -95,8 +93,8 @@ export default function Navbar() {
             <Link
               href="/contact"
               className="bg-dark text-white px-4 py-2 rounded-md transition-colors"
-            >
-              Contact Us
+            > 
+              Contact Us (中文)
             </Link>
           </nav>
 
@@ -114,15 +112,15 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg">
           <div className="container mx-auto px-4 py-4 space-y-4">
-            <MobileNavItem href="/programs" title="Programs" />
-            <MobileNavItem href="/industries" title="Industries" />
-            <MobileNavItem href="/about" title="About" />
-            <MobileNavItem href="/blog" title="Blog" />
+            <MobileNavItem href="/programs/zh" title="Programs (中文)" />
+            <MobileNavItem href="/industries/zh" title="Industries (中文)" />
+            <MobileNavItem href="/about/zh" title="About (中文)" />
+            <MobileNavItem href="/blog/zh" title="Blog (中文)" />
             <Link
-              href="/contact"
+              href="/contact/zh"
               className="block bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md text-center transition-colors"
             >
-              Contact Us
+              Contact Us (中文)
             </Link>
           </div>
         </div>
