@@ -36,7 +36,7 @@ export default function HeroChinese() {
           transition: "background 0.3s ease",
         }}
       >
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,1))]"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 py-24 md:py-32">
