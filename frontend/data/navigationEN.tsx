@@ -27,7 +27,7 @@ export const aboutItems = [
 ];
 
 export const eventItems = [
-  { title: "LinkedIn + WengZong", route: `/${english}/about/linkedin-wengzong` },
+  { title: "LinkedIn + WengZong", route: `/${english}/events/` },
 ];
 
 export const offeringsItems = [
