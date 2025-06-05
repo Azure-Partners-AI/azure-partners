@@ -1,18 +1,19 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-// import { useLanguage } from '../LanguageContext';
 
-
-export default function HeroChinese() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  // const { language } = useLanguage();
-
+export default function Hero() {
+  // Start with centered position
+  const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
+    // Mark as hydrated after first render
+    setIsHydrated(true);
+    
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX / window.innerWidth,
@@ -24,17 +25,24 @@ export default function HeroChinese() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Use static gradient during server render and hydration
+  const gradientStyle = !isHydrated
+    ? {
+        background: 'radial-gradient(circle at 50% 50%, #2563eb, #1e40af, #1e3a8a, #0f172a)',
+      }
+    : {
+        background: `radial-gradient(circle at ${mousePosition.x * 100}% ${
+          mousePosition.y * 100
+        }%, #2563eb, #1e40af, #1e3a8a, #0f172a)`,
+        transition: "background 0.3s ease",
+      };
+
   return (
     <section className="relative min-h-screen flex items-center">
       {/* Gradient background */}
       <div
         className="absolute inset-0 overflow-hidden"
-        style={{
-          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${
-            mousePosition.y * 100
-          }%, #2563eb, #1e40af, #1e3a8a, #0f172a)`,
-          transition: "background 0.3s ease",
-        }}
+        style={gradientStyle}
       >
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,1))]"></div>
       </div>

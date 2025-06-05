@@ -9,31 +9,44 @@ import LanguageToggle from "./LanguageToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
-
+    
+    // Set initial scroll state
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Use a default style during SSR and initial client render
+  const headerStyle = !mounted
+    ? "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-transparent"
+    : cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
+        scrolled
+          ? "bg-white/90 backdrop-blur-md dark:bg-background/90 shadow-sm"
+          : "bg-transparent"
+      );
+
+  const textStyle = !mounted
+    ? "font-bold text-xl transition-colors text-white"
+    : cn(
+        "font-bold text-xl transition-colors",
+        scrolled ? "text-primary" : "text-white"
+      );
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
-        scrolled
-          ? "bg-white/90 backdrop-blur-md dark:bg-background/90 shadow-sm"
-          : "bg-transparent"
-      )}
+      className={headerStyle}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
@@ -46,10 +59,7 @@ export default function Navbar() {
               className="w-10 h-10"
             />
             <span
-              className={cn(
-                "font-bold text-xl transition-colors",
-                scrolled ? "text-primary" : "text-white"
-              )}
+              className={textStyle}
             >
               Azure Partners
             </span>
