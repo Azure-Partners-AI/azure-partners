@@ -11,6 +11,11 @@ import {
   aboutItems,
   offeringsItems,
   eventItems,
+  programs, 
+  about, 
+  events, 
+  offerings,
+  contactUs,
 } from "@/data/navigationEN";
 
 export default function Navbar() {
@@ -77,7 +82,7 @@ export default function Navbar() {
           </div>
 
           <nav className="hidden md:flex space-x-8 items-center">
-            <NavItem title="Programs" scrolled={scrolled} href="/en/programs/">
+            <NavItem title={programs.title} scrolled={scrolled} href={programs.route}>
               <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {programItems.map((item, e) => (
                   <NavDropdownItem href={item.route} key={e}>
@@ -87,7 +92,7 @@ export default function Navbar() {
               </div>
             </NavItem>
 
-            <NavItem title="About" scrolled={scrolled} href="/en/about/">
+            <NavItem title={about.title} scrolled={scrolled} href={about.route}>
               <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {aboutItems.map((item, e) => (
                   <NavDropdownItem href={item.route} key={e}>
@@ -106,7 +111,7 @@ export default function Navbar() {
               </div>
             </NavItem>*/}
 
-            <NavItem title="Events" scrolled={scrolled} href="/en/events/">
+            <NavItem title={events.title} scrolled={scrolled} href={events.route}>
               <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {eventItems.map((item, e) => (
                   <NavDropdownItem href={item.route} key={e}>
@@ -117,9 +122,9 @@ export default function Navbar() {
             </NavItem>
 
             <NavItem
-              title="Offerings"
+              title={offerings.title}
               scrolled={scrolled}
-              href="/en/offerings/"
+              href={offerings.route}
             >
               <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {offeringsItems.map((item, e) => (
@@ -131,10 +136,10 @@ export default function Navbar() {
             </NavItem>
 
             <Link
-              href="/en/contact"
+              href={contactUs.route}
               className="bg-dark text-white px-4 py-2 rounded-md transition-colors"
             >
-              Contact Us
+              {contactUs.title}
             </Link>
           </nav>
 
@@ -156,10 +161,10 @@ export default function Navbar() {
               <MobileNavItem href={item.route} title={item.title} />
             ))}
             <Link
-              href="/en/contact"
+              href={contactUs.route}
               className="block bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md text-center transition-colors"
             >
-              Contact Us
+              {contactUs.title}
             </Link>
           </div>
         </div>
