@@ -22,8 +22,8 @@ export const programItems = [
 ];
 
 export const aboutItems = [
-  { title: "Company", route: `/${english}/about/company` },
-  { title: "CEO & Co-Founder", route: `/${english}/about/ceo-and-co-founder` },
+  { title: "Company", route: `/${english}/about/` },
+  { title: "CEO & Co-Founder", route: `/${english}/about/` },
 ];
 
 export const eventItems = [
