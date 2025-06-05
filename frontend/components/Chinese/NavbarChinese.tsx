@@ -5,6 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  mainItems,
+  programItems,
+  aboutItems,
+  offeringsItems,
+  eventItems,
+} from "@/data/navigationZH";
 
 export default function NavbarChinese() {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,25 +77,28 @@ export default function NavbarChinese() {
           </div>
 
           <nav className="hidden md:flex space-x-8 items-center">
-            <NavItem title="Programs" scrolled={scrolled}>
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2">
-                <NavDropdownItem href="/programs/finance">
-                  AI in Finance (中文)
-                </NavDropdownItem>
-                <NavDropdownItem href="/programs/venture-capital">
-                  VC Fundraising (中文)
-                </NavDropdownItem>
-                <NavDropdownItem href="/programs/coding">
-                  AI Coding (中文)
-                </NavDropdownItem>
-                <NavDropdownItem href="/programs/enterprise">
-                  Enterprise Solutions (中文)
-                </NavDropdownItem>
+            <NavItem title="课程项目" scrolled={scrolled} href="/en/programs/">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {programItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
+              </div>
+            </NavItem>
+
+            <NavItem title="关于我们" scrolled={scrolled} href="/en/about/">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {aboutItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
               </div>
             </NavItem>
 
             {/*<NavItem title="Industries" scrolled={scrolled}>
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <NavDropdownItem href="/industries/finance">Finance</NavDropdownItem>
                 <NavDropdownItem href="/industries/healthcare">Healthcare</NavDropdownItem>
                 <NavDropdownItem href="/industries/tech">Technology</NavDropdownItem>
@@ -96,14 +106,35 @@ export default function NavbarChinese() {
               </div>
             </NavItem>*/}
 
-            <NavItem href="/about" title="About" scrolled={scrolled} />
-            <NavItem href="/blog" title="Blog" scrolled={scrolled} />
+            <NavItem title="活动" scrolled={scrolled} href="/en/events/">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {eventItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
+              </div>
+            </NavItem>
+
+            <NavItem
+              title="服务内容"
+              scrolled={scrolled}
+              href="/en/offerings/"
+            >
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {offeringsItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
+              </div>
+            </NavItem>
 
             <Link
-              href="/contact"
+              href="/zh/contact"
               className="bg-dark text-white px-4 py-2 rounded-md transition-colors"
             >
-              Contact Us (中文)
+              联系我们
             </Link>
           </nav>
 
@@ -121,15 +152,14 @@ export default function NavbarChinese() {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg">
           <div className="container mx-auto px-4 py-4 space-y-4">
-            <MobileNavItem href="/programs/zh" title="Programs (中文)" />
-            <MobileNavItem href="/industries/zh" title="Industries (中文)" />
-            <MobileNavItem href="/about/zh" title="About (中文)" />
-            <MobileNavItem href="/blog/zh" title="Blog (中文)" />
+            {mainItems.map((item, e) => (
+              <MobileNavItem href={item.route} title={item.title} />
+            ))}
             <Link
-              href="/contact/zh"
+              href="/zh/contact"
               className="block bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md text-center transition-colors"
             >
-              Contact Us (中文)
+              联系我们
             </Link>
           </div>
         </div>

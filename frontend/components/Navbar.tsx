@@ -5,7 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import LanguageToggle from "./LanguageToggle";
+import {
+  mainItems,
+  programItems,
+  aboutItems,
+  offeringsItems,
+  eventItems,
+} from "@/data/navigationEN";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,25 +77,28 @@ export default function Navbar() {
           </div>
 
           <nav className="hidden md:flex space-x-8 items-center">
-            <NavItem title="Programs" scrolled={scrolled}>
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2">
-                <NavDropdownItem href="/programs/finance">
-                  AI in Finance
-                </NavDropdownItem>
-                <NavDropdownItem href="/programs/venture-capital">
-                  VC Fundraising
-                </NavDropdownItem>
-                <NavDropdownItem href="/programs/coding">
-                  AI Coding
-                </NavDropdownItem>
-                <NavDropdownItem href="/programs/enterprise">
-                  Enterprise Solutions
-                </NavDropdownItem>
+            <NavItem title="Programs" scrolled={scrolled} href="/en/programs/">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {programItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
+              </div>
+            </NavItem>
+
+            <NavItem title="About" scrolled={scrolled} href="/en/about/">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {aboutItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
               </div>
             </NavItem>
 
             {/*<NavItem title="Industries" scrolled={scrolled}>
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <NavDropdownItem href="/industries/finance">Finance</NavDropdownItem>
                 <NavDropdownItem href="/industries/healthcare">Healthcare</NavDropdownItem>
                 <NavDropdownItem href="/industries/tech">Technology</NavDropdownItem>
@@ -97,11 +106,32 @@ export default function Navbar() {
               </div>
             </NavItem>*/}
 
-            <NavItem href="/about" title="About" scrolled={scrolled} />
-            <NavItem href="/blog" title="Blog" scrolled={scrolled} />
+            <NavItem title="Events" scrolled={scrolled} href="/en/events/">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {eventItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
+              </div>
+            </NavItem>
+
+            <NavItem
+              title="Offerings"
+              scrolled={scrolled}
+              href="/en/offerings/"
+            >
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {offeringsItems.map((item, e) => (
+                  <NavDropdownItem href={item.route} key={e}>
+                    {item.title}
+                  </NavDropdownItem>
+                ))}
+              </div>
+            </NavItem>
 
             <Link
-              href="/contact"
+              href="/en/contact"
               className="bg-dark text-white px-4 py-2 rounded-md transition-colors"
             >
               Contact Us
@@ -122,12 +152,11 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg">
           <div className="container mx-auto px-4 py-4 space-y-4">
-            <MobileNavItem href="/programs" title="Programs" />
-            <MobileNavItem href="/industries" title="Industries" />
-            <MobileNavItem href="/about" title="About" />
-            <MobileNavItem href="/blog" title="Blog" />
+            {mainItems.map((item, e) => (
+              <MobileNavItem href={item.route} title={item.title} />
+            ))}
             <Link
-              href="/contact"
+              href="/en/contact"
               className="block bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md text-center transition-colors"
             >
               Contact Us
