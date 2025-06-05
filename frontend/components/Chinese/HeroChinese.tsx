@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export default function Hero() {
   useEffect(() => {
     // Mark as hydrated after first render
     setIsHydrated(true);
-    
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX / window.innerWidth,
@@ -28,7 +28,8 @@ export default function Hero() {
   // Use static gradient during server render and hydration
   const gradientStyle = !isHydrated
     ? {
-        background: 'radial-gradient(circle at 50% 50%, #2563eb, #1e40af, #1e3a8a, #0f172a)',
+        background:
+          "radial-gradient(circle at 50% 50%, #2563eb, #1e40af, #1e3a8a, #0f172a)",
       }
     : {
         background: `radial-gradient(circle at ${mousePosition.x * 100}% ${
@@ -40,10 +41,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center">
       {/* Gradient background */}
-      <div
-        className="absolute inset-0 overflow-hidden"
-        style={gradientStyle}
-      >
+      <div className="absolute inset-0 overflow-hidden" style={gradientStyle}>
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,1))]"></div>
       </div>
 
@@ -55,9 +53,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Transform Your Future with
+            用 AI 精通 改变你的未来
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 block mt-2">
-              AI Mastery (中文)
+              AI 精通
             </span>
           </motion.h1>
 
@@ -67,8 +65,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Unlock your greatest potential of tomorrow with our expert-led AI
-            programs. Invest in yourself today! (中文)
+            在我们专家主导的 AI 项目中，释放你未来的无限潜力。今天就投资你自己！
           </motion.p>
 
           <motion.div
@@ -78,17 +75,17 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Link
-              href="/programs"
-              className="bg-black hover:bg-transparent/90 text-primary font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
+              href="/zh/programs"
+              className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
             >
-              Explore Programs (中文)
+              探索培训
               <ArrowRight size={16} className="ml-2" />
             </Link>
             <Link
-              href="/contact"
+              href="/zh/contact"
               className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
             >
-              Contact Us (中文)
+              联系我们
             </Link>
           </motion.div>
         </div>

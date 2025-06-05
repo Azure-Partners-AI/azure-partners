@@ -36,6 +36,7 @@ export default function Hero() {
         }%, #2563eb, #1e40af, #1e3a8a, #0f172a)`,
         transition: "background 0.3s ease",
       };
+
   return (
     <section className="relative min-h-screen flex items-center">
       {/* Gradient background */}
@@ -77,14 +78,14 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Link
-              href="/programs"
-              className="bg-black hover:bg-transparent/90 text-primary font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
+              href="/en/get-started"
+              className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
             >
-              Explore Programs
+              Start Exploring
               <ArrowRight size={16} className="ml-2" />
             </Link>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
             >
               Contact Us
