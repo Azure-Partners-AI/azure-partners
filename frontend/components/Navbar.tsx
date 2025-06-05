@@ -17,10 +17,10 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    
+
     // Set initial scroll state
     handleScroll();
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -45,32 +45,30 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header
-      className={headerStyle}
-    >
+    <header className={headerStyle}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/logo.avif"
-              alt="Azure Partners Logo"
-              width={40}
-              height={40}
-              className="w-10 h-10"
-            />
-            <span
-              className={textStyle}
-            >
-              Azure Partners
-            </span>
+          <div className="flex items-center space-x-4">
+            {/* Logo and Brand Name */}
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/logo.avif"
+                alt="Azure Partners Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
+              <span className={textStyle}>Azure Partners</span>
+            </Link>
 
+            {/* 中文 Button */}
             <Link
               href="/zh"
-              className="bg-dark text-white px-4 py-2 rounded-md transition-colors ml-3"
+              className="bg-dark text-white px-4 py-2 rounded-md transition-colors"
             >
               中文
             </Link>
-          </Link>
+          </div>
 
           <nav className="hidden md:flex space-x-8 items-center">
             <NavItem title="Programs" scrolled={scrolled}>

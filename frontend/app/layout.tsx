@@ -1,13 +1,21 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import "./globals.css";
+import "./normalize.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Head from "next/head";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Azure Partners | AI Education for Industry Professionals',
-  description: 'Immerse yourself in the latest AI technologies for finance, VC fundraising, coding and more with Azure Partners.',
+  title: "Azure Partners | AI Education for Industry Professionals",
+  description:
+    "Immerse yourself in the latest AI technologies for finance, VC fundraising, coding and more with Azure Partners.",
+  // icons: {
+  //   icon: './favicon.ico',
+  //   shortcut: './favicon.ico',
+  //   apple: './favicon.ico',
+  // }
 };
 
 export default function RootLayout({
