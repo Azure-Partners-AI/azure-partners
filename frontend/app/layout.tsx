@@ -11,11 +11,16 @@ export const metadata: Metadata = {
   title: "Azure Partners | AI Education for Industry Professionals",
   description:
     "Immerse yourself in the latest AI technologies for finance, VC fundraising, coding and more with Azure Partners.",
-  // icons: {
-  //   icon: './favicon.ico',
-  //   shortcut: './favicon.ico',
-  //   apple: './favicon.ico',
-  // }
+  openGraph: {
+    images: [
+      {
+        url: "https://azure-partners.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Azure Partners - Offical Website",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +30,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta property="og:title" content="My Site Title" />
+        <meta
+          property="og:description"
+          content="Default description for my site"
+        />
+        <meta
+          property="og:image"
+          content="https://example.com/default-og-image.jpg"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://example.com" />
+      </Head>
+
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider
           attribute="class"
