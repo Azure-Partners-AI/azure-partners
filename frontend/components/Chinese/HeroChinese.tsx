@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { contactUs, programs } from "@/data/navigationZH";
+import HeroButtonZH from "../HeroButton/HeroButtonZH";
 
 export default function Hero() {
   // Start with centered position
@@ -74,15 +76,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
+            <HeroButtonZH/>
             <Link
-              href="/zh/programs"
-              className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
-            >
-              探索培训
-              <ArrowRight size={16} className="ml-2" />
-            </Link>
-            <Link
-              href="/zh/contact"
+              href={contactUs.route}
               className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
             >
               联系我们

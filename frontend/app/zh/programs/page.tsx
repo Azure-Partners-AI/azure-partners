@@ -9,55 +9,55 @@ export default function ProgramsPage() {
     <div className="container mx-auto px-6 py-24 md:py-32">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600">
-          Our Programs
+          我们的项目
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Our programs don't just teach AI—they transform professionals into
-          industry leaders who shape the future of their fields.
+          我们的项目不仅教授
+          AI，更将专业人士转变为行业领袖，引领他们所在领域的未来。
         </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
         <ProgramCard
           icon={<IoIosRocket size={50} />}
-          title="Venture Capital"
+          title="风险投资"
           outcomes={[
-            "Predict which sectors or founders are likely to outperform.",
-            "Efficiently scan the web, pitch decks, and databases for high-potential startups.",
-            "AI-powered dashboards to monitor KPIs, runway, burn rate, and milestones across all portfolio companies.",
-            "Automate fund performance summaries, investor reports, and updates using generative AI.",
+            "预测哪些行业或创业者最有可能脱颖而出。",
+            "高效浏览网页、商业计划书和数据库，寻找高潜力创业公司。",
+            "利用 AI 仪表盘监控各投资公司的关键指标、现金流、烧钱速度和里程碑。",
+            "使用生成式 AI 自动撰写基金业绩摘要、投资者报告和更新。",
           ]}
-          benefits="Join the elite group of VCs who leverage AI to identify unicorns before others."
+          benefits="加入利用 AI 提前识别独角兽的精英投资者行列。"
           color="primary"
-          route="/en/programs/ai-for-vc"
+          route="/zh/programs/ai-for-vc"
         />
 
         <ProgramCard
           icon={<CiBank size={50} />}
-          title="Finance"
+          title="金融"
           outcomes={[
-            "Automate extraction of key financial metrics (e.g., P/E ratio, EBITDA).",
-            "Generate insights from unstructured data like PDFs and investor presentations.",
-            "Generate insights from unstructured data like PDFs and investor presentations.",
-            "Combine structured data with unstructured text (e.g., CEO guidance) to refine outlooks.",
+            "自动提取关键财务指标（如市盈率、EBITDA 等）。",
+            "从 PDF 和投资者陈述等非结构化数据中生成洞察。",
+            "结合结构化数据与非结构化文本（如 CEO 指引）优化分析预测。",
+            "通过智能分析实现高效投资决策和风险控制。",
           ]}
-          benefits="Revolutionizing financial institutions with AI."
+          benefits="用 AI 彻底革新金融机构。"
           color="secondary"
-          route="/en/programs/ai-for-finance"
+          route="/zh/programs/ai-for-finance"
         />
 
         <ProgramCard
           icon={<IoSchoolSharp size={50} />}
-          title="Education"
+          title="教育"
           outcomes={[
-            "Summarize complex topics into digestible formats for different grade levels.",
-            "Helps both students and non-native-speaking educators.",
-            "Agents track student engagement, flagging when someone falls behind.",
-            "Teachers save time and students get personalized comments at scale.",
+            "将复杂主题总结为适合不同年级的简明内容。",
+            "帮助学生和非母语教师更好理解课程内容。",
+            "智能代理追踪学生参与度，及时标记掉队者。",
+            "教师节省时间，学生获得个性化评语和反馈。",
           ]}
-          benefits="Transform education with AI. Educators increase student engagement and spearhead better learning outcomes through AI-powered personalization."
+          benefits="用 AI 赋能教育，提高学生参与度，实现更好的学习成果。"
           color="tertiary"
-          route="/en/programs/ai-for-education"
+          route="/zh/programs/ai-for-education"
         />
       </div>
     </div>
@@ -105,7 +105,7 @@ function ProgramCard({
       <p className="text-muted-foreground mb-6">{benefits}</p>
 
       <div className="space-y-3">
-        <h3 className="font-semibold text-lg mb-3">Program Outcomes:</h3>
+        <h3 className="font-semibold text-lg mb-3">项目成果：</h3>
         {outcomes.map((outcome, index) => (
           <div key={index} className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />
@@ -113,13 +113,13 @@ function ProgramCard({
           </div>
         ))}
       </div>
-      <p className="mt-4 text-muted-foreground">+ many more</p>
+      <p className="mt-4 text-muted-foreground">+ 更多内容</p>
 
       <Link
         href={route}
         className={`mt-8 inline-flex items-center justify-center w-full font-medium px-6 py-3 rounded-lg transition-colors ${buttonClasses[color]}`}
       >
-        Learn More
+        了解更多
       </Link>
     </div>
   );

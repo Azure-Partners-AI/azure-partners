@@ -1,0 +1,14 @@
+.link:hover {
+    color: rgb(77, 77, 241);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.linkedin {
+    color: #0a66c2;
+}
+
+.talkImg {
+    width: 100%;
+    border-radius: 20px;
+}

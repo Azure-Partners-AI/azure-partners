@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import HeroButtonEN from "./HeroButton/HeroButtonEN";
+import { contactUs } from "@/data/navigationEN";
 
 export default function Hero() {
   // Start with centered position
@@ -78,7 +79,7 @@ export default function Hero() {
           >
             <HeroButtonEN />
             <Link
-              href="/en/contact"
+              href={contactUs.route}
               className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center"
             >
               Contact Us
