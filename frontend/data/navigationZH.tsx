@@ -1,9 +1,9 @@
 const chinese = "zh";
 
 export const programs =  { title: "课程项目", route: `/${chinese}/programs` }
-export const about =  { title: "课程项目", route: `/${chinese}/about` }
-export const events =  { title: "课程项目", route: `/${chinese}/events` }
-export const offerings =  { title: "课程项目", route: `/${chinese}/offerings` }
+export const about =  { title: "关于我们", route: `/${chinese}/about` }
+export const events =  { title: "活动", route: `/${chinese}/events` }
+export const offerings =  { title: "服务内容", route: `/${chinese}/offerings` }
 export const contactUs = { title: "联系我们", route: `${chinese}/contact-us` }
 
 
