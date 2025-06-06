@@ -1,13 +1,14 @@
-'use client';
+"use client";
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Code, TrendingUp, BrainCircuit, Building2 } from 'lucide-react';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Code, TrendingUp, BrainCircuit, Building2 } from "lucide-react";
+import ReturnButtonEN from "./ReturnHome/ReturnHomeEN";
 
 export default function Programs() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -27,19 +28,23 @@ export default function Programs() {
   return (
     <section ref={ref} className="py-20 md:py-32 bg-white dark:bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our AI Programs</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our AI Programs
+
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Specialized educational tracks designed to enhance your industry knowledge with cutting-edge AI applications.
+            Specialized educational tracks designed to enhance your industry
+            knowledge with cutting-edge AI applications.
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={container}
           initial="hidden"
@@ -52,7 +57,7 @@ export default function Programs() {
             href="/programs/finance"
             variants={item}
           />
-          
+
           <ProgramCard
             icon={<Building2 className="h-10 w-10 text-indigo-500" />}
             title="VC Fundraising"
@@ -60,7 +65,7 @@ export default function Programs() {
             href="/programs/venture-capital"
             variants={item}
           />
-          
+
           <ProgramCard
             icon={<Code className="h-10 w-10 text-teal-500" />}
             title="AI Coding"
@@ -68,7 +73,7 @@ export default function Programs() {
             href="/programs/coding"
             variants={item}
           />
-          
+
           <ProgramCard
             icon={<BrainCircuit className="h-10 w-10 text-purple-500" />}
             title="Enterprise AI"
@@ -90,7 +95,13 @@ interface ProgramCardProps {
   variants: any;
 }
 
-function ProgramCard({ icon, title, description, href, variants }: ProgramCardProps) {
+function ProgramCard({
+  icon,
+  title,
+  description,
+  href,
+  variants,
+}: ProgramCardProps) {
   return (
     <motion.a
       href={href}
