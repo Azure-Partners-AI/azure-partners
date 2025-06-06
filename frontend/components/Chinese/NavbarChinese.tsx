@@ -61,7 +61,7 @@ export default function NavbarChinese() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             {/* Logo and Brand Name */}
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/zh" className="flex items-center space-x-2">
               <Image
                 src="/logo.avif"
                 alt="Azure Partners Logo"
