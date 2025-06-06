@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://azure-partners.vercel.app/og-image.jpg",
+        url: "https://azure-partners.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Azure Partners - Offical Website",
