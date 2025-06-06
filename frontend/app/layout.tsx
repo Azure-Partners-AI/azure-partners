@@ -30,20 +30,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <meta property="og:title" content="My Site Title" />
-        <meta
-          property="og:description"
-          content="Default description for my site"
-        />
-        <meta
-          property="og:image"
-          content="https://example.com/default-og-image.jpg"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://example.com" />
-      </Head>
-
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider
           attribute="class"
