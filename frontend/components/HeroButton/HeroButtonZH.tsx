@@ -1,13 +1,12 @@
-"use client";
+'use client'
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
 const HeroButtonZH = () => {
   const actionItems = [
-    { title: "开始探索", route: "/zh/get-started" },
+    // { title: "开始探索", route: "/zh/get-started" },
     { title: "查看课程", route: "/zh/programs" },
     { title: "了解我们的服务", route: "/zh/offerings" },
   ];

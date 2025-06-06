@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 const HeroButtonEN = () => {
   const actionItems = [
-    { title: "Get Started", route: "/en/get-started" },
+    // { title: "Get Started", route: "/en/get-started" },
     { title: "View Programs", route: "/en/programs" },
     { title: "Peek at our offerings", route: "/en/offerings" },
   ];
