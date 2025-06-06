@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   mainItems,
@@ -22,6 +22,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null); // <== add this
 
   useEffect(() => {
     setMounted(true);
@@ -63,16 +64,16 @@ export default function Navbar() {
             <span className={textStyle}>Azure Partners</span>
           </Link>
           <Link
-            href="/zh"
+            href="/en"
             className="bg-dark text-white px-3 py-1.5 rounded-md text-sm"
           >
-            中文
+            English
           </Link>
         </div>
 
         {/* Toggle Button */}
         <button
-          className="md:hidden text-primary dark:text-primary-foreground"
+          className="md:hidden text-primary light:text-primary-foreground"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,10 +87,38 @@ export default function Navbar() {
           )}
         >
           <ul className="flex flex-col md:flex-row md:items-center md:space-x-8 px-4 py-4 md:p-0">
-            <Dropdown title={programs.title} items={programItems} href={programs.route} />
-            <Dropdown title={about.title} items={aboutItems} href={about.route} />
-            <Dropdown title={events.title} items={eventItems} href={events.route} />
-            <Dropdown title={offerings.title} items={offeringsItems} href={offerings.route} />
+            <Dropdown
+              id="programs"
+              title={programs.title}
+              items={programItems}
+              href={programs.route}
+              openDropdown={openDropdown}
+              setOpenDropdown={setOpenDropdown}
+            />
+            <Dropdown
+              id="about"
+              title={about.title}
+              items={aboutItems}
+              href={about.route}
+              openDropdown={openDropdown}
+              setOpenDropdown={setOpenDropdown}
+            />
+            <Dropdown
+              id="events"
+              title={events.title}
+              items={eventItems}
+              href={events.route}
+              openDropdown={openDropdown}
+              setOpenDropdown={setOpenDropdown}
+            />
+            <Dropdown
+              id="offerings"
+              title={offerings.title}
+              items={offeringsItems}
+              href={offerings.route}
+              openDropdown={openDropdown}
+              setOpenDropdown={setOpenDropdown}
+            />
             <li>
               <Link
                 href={contactUs.route}
@@ -106,17 +135,25 @@ export default function Navbar() {
 }
 
 function Dropdown({
+  id,
   title,
   items,
   href,
+  openDropdown,
+  setOpenDropdown,
 }: {
+  id: string;
   title: string;
   items: { title: string; route: string }[];
   href?: string;
+  openDropdown: string | null;
+  setOpenDropdown: (id: string | null) => void;
 }) {
-  const [open, setOpen] = useState(false);
+  const isOpen = openDropdown === id;
 
-  const toggleDropdown = () => setOpen((prev) => !prev);
+  const toggleDropdown = () => {
+    setOpenDropdown(isOpen ? null : id);
+  };
 
   return (
     <li className="relative">
@@ -125,10 +162,14 @@ function Dropdown({
         className="flex items-center px-2 py-2 text-foreground hover:text-primary transition-colors"
       >
         {title}
-        <ChevronDown size={16} className="ml-1" />
+        {isOpen ? (
+          <ChevronUp size={16} className="ml-1" />
+        ) : (
+          <ChevronDown size={16} className="ml-1" />
+        )}
       </button>
 
-      {open && (
+      {isOpen && (
         <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-md shadow-lg p-4 space-y-2 z-50">
           {items.map((item, index) => (
             <Link
