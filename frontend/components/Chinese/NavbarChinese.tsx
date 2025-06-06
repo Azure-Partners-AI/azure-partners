@@ -16,7 +16,7 @@ import {
   events,
   offerings,
   contactUs,
-} from "@/data/navigationEN";
+} from "@/data/navigationZH";
 
 export default function NavbarChinese() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,17 +64,20 @@ export default function NavbarChinese() {
             <span className={textStyle}>Azure Partners</span>
           </Link>
           <Link
-            href="/zh"
+            href="/en"
             className="bg-dark text-white px-3 py-1.5 rounded-md text-sm"
           >
-            中文
+            English
           </Link>
         </div>
 
         {/* Toggle Button */}
         <button
           className="md:hidden text-primary light:text-primary-foreground"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            setOpenDropdown(null);
+          }}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

@@ -64,17 +64,20 @@ export default function Navbar() {
             <span className={textStyle}>Azure Partners</span>
           </Link>
           <Link
-            href="/en"
+            href="/zh"
             className="bg-dark text-white px-3 py-1.5 rounded-md text-sm"
           >
-            English
+            中文
           </Link>
         </div>
 
         {/* Toggle Button */}
         <button
           className="md:hidden text-primary light:text-primary-foreground"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            setOpenDropdown(null);
+          }}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
