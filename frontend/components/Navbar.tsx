@@ -124,7 +124,7 @@ export default function Navbar() {
             />
             <li>
               <Link
-                href={contactUs.route}
+                href="/en/contact-us"
                 className="block bg-dark text-white px-4 py-2 rounded-md text-center hover:bg-primary/90 transition-colors"
               >
                 {contactUs.title}
