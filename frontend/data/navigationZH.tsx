@@ -26,7 +26,7 @@ export const aboutItems = [
 ];
 
 export const eventItems = [
-  { title: "LinkedIn + 翁纵分享会", route: `/${chinese}/events/` },
+  { title: "探索", route: `/${chinese}/events/` },
 ];
 
 /*export const offeringsItems = [
