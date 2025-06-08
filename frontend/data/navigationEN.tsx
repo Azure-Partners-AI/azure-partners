@@ -30,28 +30,20 @@ export const eventItems = [
   { title: "View", route: `/${english}/events/` },
 ];
 
-// export const offeringsItems = [
-//   { title: "Courses", route: `/${english}/offerings/courses` },
-//   { title: "Internship", route: `/${english}/offerings/internship` },
-//   {
-//     title: "AI Tutoring Services",
-//     route: `/${english}/offerings/ai-tutoring-services`,
-//   },
-//   {
-//     title: "Content Image/Video Generation",
-//     route: `/${english}/offerings/content-generation`,
-//   },
-//   {
-//     title: "AI Application Development",
-//     route: `/${english}/offerings/ai-application-development`,
-//   },
-// ];
-
 export const offeringsItems = [
-  { title: "Courses", route: `/${english}/offerings` },
-  { title: "Internship", route: `/${english}/offerings` },
-  { title: "AI Tutoring Services", route: `/${english}/offerings` },
-  { title: "Content Image/Video Generation", route: `/${english}/offerings` },
-  { title: "AI Application Development", route: `/${english}/offerings` },
+  { title: "Courses", route: `/${english}/offerings/courses` },
+  { title: "Internship", route: `/${english}/offerings/internship` },
+  {
+    title: "AI Tutoring Services",
+    route: `/${english}/offerings/ai-tutoring-services`,
+  },
+  {
+    title: "Content Image/Video Generation",
+    route: `/${english}/offerings/content-generation`,
+  },
+  {
+    title: "AI Application Development",
+    route: `/${english}/offerings/ai-application-development`,
+  },
 ];
 

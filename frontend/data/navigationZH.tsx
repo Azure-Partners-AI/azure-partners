@@ -29,19 +29,11 @@ export const eventItems = [
   { title: "探索", route: `/${chinese}/events/` },
 ];
 
-/*export const offeringsItems = [
+export const offeringsItems = [
   { title: "课程", route: `/${chinese}/offerings/courses` },
   { title: "实习", route: `/${chinese}/offerings/internship` },
   { title: "AI 辅导服务", route: `/${chinese}/offerings/ai-tutoring-services` },
   { title: "图像/视频生成服务", route: `/${chinese}/offerings/content-generation` },
   { title: "AI 应用开发", route: `/${chinese}/offerings/ai-application-development` },
-];*/
-
-export const offeringsItems = [
-  { title: "课程", route: `/${chinese}/offerings` },
-  { title: "实习", route: `/${chinese}/offerings` },
-  { title: "AI 辅导服务", route: `/${chinese}/offerings` },
-  { title: "图像/视频生成服务", route: `/${chinese}/offerings` },
-  { title: "AI 应用开发", route: `/${chinese}/offerings` },
 ];
 
