@@ -1,12 +1,20 @@
-import Hero from '@/components/Hero';
-import Navbar from '@/components/Navbar';
+'use client'
+
+// import Hero from '@/components/Hero';
+// import Navbar from '@/components/Navbar';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+
+  const router = useRouter()
+
+  router.push("/en"); // immediate redirect
+
   return (
     <main className="min-h-screen">
-      <Navbar />
+      {/*<Navbar />
       <Hero />
-      {/*<Programs />
+      <Programs />
       <Features />
       <Testimonials />
       <CallToAction />

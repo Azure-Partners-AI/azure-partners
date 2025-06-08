@@ -18,11 +18,17 @@ import {
   contactUs,
 } from "@/data/navigationEN";
 
+import { usePathname } from 'next/navigation'
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null); // <== add this
+
+  const pathname = usePathname();
+
+  console.log(pathname);
 
   useEffect(() => {
     setMounted(true);
@@ -64,7 +70,7 @@ export default function Navbar() {
             <span className={textStyle}>Azure Partners</span>
           </Link>
           <Link
-            href="/zh"
+            href={`/zh/${pathname.slice(4)}`}
             className="bg-dark text-white px-3 py-1.5 rounded-md text-sm"
           >
             中文
