@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-6">
               <Image
-                src="/logo.png"
+                src="/logo.avif"
                 alt="Azure Partners Logo"
                 width={40}
                 height={40}
