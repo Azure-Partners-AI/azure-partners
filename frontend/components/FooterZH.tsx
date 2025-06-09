@@ -1,9 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Youtube, Instagram } from "lucide-react";
-import { aboutItems, offeringsItems, programItems, programs, about, offerings } from "@/data/navigationEN";
+import {
+  aboutItems,
+  offeringsItems,
+  programItems,
+  programs,
+  offerings,
+  about,
+} from "@/data/navigationZH";
 
-export default function Footer() {
+export default function FooterZH() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
@@ -22,9 +29,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
-              Azure Partners provides cutting-edge AI education for industry
-              professionals, transforming careers and businesses through
-              specialized immersive learning experiences.
+              Azure Partners
+              为行业专业人士提供前沿的人工智能教育，通过专门的沉浸式学习体验，助力职业发展与业务转型。
             </p>
             <div className="flex space-x-4">
               <SocialLink
@@ -42,19 +48,25 @@ export default function Footer() {
 
           <FooterColumn title={programs.title}>
             {programItems.map((item, e) => (
-              <FooterLink key={e} href={item.route}>{item.title}</FooterLink>
+              <FooterLink key={e} href={item.route}>
+                {item.title}
+              </FooterLink>
             ))}
           </FooterColumn>
 
           <FooterColumn title={about.title}>
             {aboutItems.map((item, e) => (
-              <FooterLink key={e} href={item.route}>{item.title}</FooterLink>
+              <FooterLink key={e} href={item.route}>
+                {item.title}
+              </FooterLink>
             ))}
           </FooterColumn>
 
           <FooterColumn title={offerings.title}>
             {offeringsItems.map((item, e) => (
-              <FooterLink key={e} href={item.route}>{item.title}</FooterLink>
+              <FooterLink key={e} href={item.route}>
+                {item.title}
+              </FooterLink>
             ))}
           </FooterColumn>
         </div>

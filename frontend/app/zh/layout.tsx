@@ -1,6 +1,7 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import NavbarChinese from '@/components/Chinese/NavbarChinese';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import NavbarChinese from "@/components/Chinese/NavbarChinese";
+import FooterZH from "@/components/FooterZH";
 
 export default function ChineseLayout({
   children,
@@ -11,6 +12,7 @@ export default function ChineseLayout({
     <>
       <NavbarChinese />
       {children}
+      <FooterZH />
     </>
   );
 }
