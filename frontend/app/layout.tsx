@@ -3,7 +3,7 @@ import "./normalize.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import Head from "next/head";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +39,7 @@ export default function RootLayout({
         >
           <main>{children}</main>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
