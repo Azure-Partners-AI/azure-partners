@@ -98,7 +98,7 @@ export default function EventsPage() {
                 金融科技与风险投资主题演讲
               </h2>
               <p className="text-muted-foreground mb-6">
-                2024 年 2 月 16 日 - 哥伦比亚大学
+                2025 年 2 月 16 日 - 哥伦比亚大学
               </p>
 
               <div className="prose dark:prose-invert max-w-none">

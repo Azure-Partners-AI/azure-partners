@@ -108,7 +108,7 @@ export default function EventsPage() {
                 Fintech & Venture Capital Talk
               </h2>
               <p className="text-muted-foreground mb-6">
-                February 16, 2024 - Columbia University
+                February 16, 2025 - Columbia University
               </p>
 
               <div className="prose dark:prose-invert max-w-none">
