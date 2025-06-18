@@ -1,2 +1,2 @@
 export const linkedin = '';
-export const companyEmail = '';
+export const companyEmail = 'andrew@azurepartners.ai';

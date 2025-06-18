@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Contact.module.css"
+import { companyEmail } from "@/data/socials";
 
 export const metadata = {
   title: "Contact | Azure Partners",
@@ -17,10 +18,10 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold mb-4">Email</h2>
             <p className="text-lg text-muted-foreground">
               <a
-                href="mailto:a9.zhang@gmail.com"
+                href={`mailto:${companyEmail}`}
                 className="text-blue-600 dark:text-blue-400 hover:underline"
               >
-                a9.zhang@gmail.com
+                {companyEmail}
               </a>
             </p>
           </div>
